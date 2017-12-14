@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class FitmeterApplication extends SpringBootServletInitializer {
+public class FitmeterApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FitmeterApplication.class, args);
