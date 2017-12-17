@@ -1,43 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@include file="common/header.jspf"%>
+<%@include file="common/navigation.jspf"%>
+<%@include file="common/footer.jspf"%>
 
-<!DOCTYPE HTML>
 
-
-<html>
-
-<head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
-    <script src="static/js/jquery-3.2.1.min.js"></script>
-    <script src="static/js/popper.min.js"></script>
-    <style>
-        /* Make the image fully responsive */
-        .carousel-inner img {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-</head>
-
-<body>
-<br>
 
 <div class="container">
     <br>
-    <!-- Nav pills -->
-    <ul class="nav nav-pills" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="pill" href="#home">FitMeter</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#menu1">Calorie Calculator</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="<c:url value="/login"/>">Log In</a>
-        </li>
-    </ul>
 
     <div id="demo" class="carousel slide" data-ride="carousel">
 
@@ -125,9 +94,3 @@
     </div>
 </div>
 
-
-
-<script src="static/js/bootstrap.min.js"></script>
-</body>
-
-</html>
