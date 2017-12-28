@@ -1,5 +1,6 @@
 package com.fitmeter.fitmeter.controller;
 
+import com.fitmeter.fitmeter.model.FoodStats;
 import com.fitmeter.fitmeter.model.service.FoodStatsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,8 +30,9 @@ public class FoodStatsController {
     }
 
     @RequestMapping(value = "/add-food", method = RequestMethod.POST)
-    public String addFood(ModelMap model, @RequestParam String desc){
-        service.addFoodStats("Gabriel", desc, new Date(), false);
+    public String addFood(ModelMap model, @RequestParam String desc, @RequestParam int carbs,
+                  @RequestParam int calories, @RequestParam int protein, @RequestParam int fat, @RequestParam int sugar){
+        service.addFoodStats("Gabriel", desc, new Date(),  carbs, calories, protein, fat, sugar);
 
         return "redirect:/list-foods";
     }

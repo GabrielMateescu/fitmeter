@@ -14,8 +14,8 @@ public class FoodStatsService {
     private static int foodCount = 2;
 
     static {
-        foodStats.add(new FoodStats(1, "Gabriel", "Papanasi", new Date(), false));
-        foodStats.add(new FoodStats(2, "Gabriel", "Banane", new Date(), true));
+        foodStats.add(new FoodStats(1, "Gabriel", "Papanasi", new Date(), 55, 344, 32, 12, 33));
+        foodStats.add(new FoodStats(2, "Gabriel", "Banane", new Date(), 66, 553, 23, 44, 32));
     }
 
     public List<FoodStats> retrieveFoodStats(String user) {
@@ -28,8 +28,19 @@ public class FoodStatsService {
         return fileteredFoodStats;
     }
 
-    public void addFoodStats(String name, String desc, Date targetDate, boolean isDone){
-        foodStats.add(new FoodStats(++foodCount, name, desc, targetDate, isDone));
+    public FoodStats retrieveFood(int id) {
+        List<FoodStats> fileteredFoodStats = new ArrayList<>();
+        for(FoodStats food : foodStats ) {
+            if(food.getId() == id){
+                fileteredFoodStats.add(food);
+                return food;
+            }
+        }
+        return null;
+    }
+
+    public void addFoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar){
+        foodStats.add(new FoodStats(++foodCount, name, desc, targetDate, carbs, calories, protein, fat, sugar));
     }
 
     public void deleteFoodStats(int id){

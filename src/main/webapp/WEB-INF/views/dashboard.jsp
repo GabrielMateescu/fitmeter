@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    Welcome ${name}!! <a href="/list-foods">Click Here</a> to manage your todos
+    Welcome ${name}!! <a href="/list-foods">Click Here</a> to manage your foods
 
 </body>
 </html>
