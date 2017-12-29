@@ -25,6 +25,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 
-        <p>Don't have an account? <a href="<c:url value="/register" />">Register</a> </p>
+        <p>Don't have an account? <a href="<c:url value="/newaccount" />">Register</a> </p>
 </form>
 </div>

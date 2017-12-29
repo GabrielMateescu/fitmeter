@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="common/header.jspf"%>
 <%@include file="common/navigation.jspf"%>
-<%@include file="common/footer.jspf"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,12 +21,32 @@
 </head>
 <body>
 <div class="container">
-    <form class="form-horizontal" role="form" method="POST" action="/register">
+    <form class="form-horizontal" role="form" method="POST" action="/newaccount" >
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
                 <h2>Register New User</h2>
                 <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 field-label-responsive">
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-shield"></i></div>
+                        <input type="text" name="username" class="form-control" id="username"
+                               placeholder="Username" required autofocus>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-control-feedback">
+                        <span class="text-danger align-middle">
+                            <!-- Put name validation error messages here -->
+                        </span>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -113,3 +133,4 @@
     </form>
 </div>
 </body>
+<%@include file="common/footer.jspf"%>
