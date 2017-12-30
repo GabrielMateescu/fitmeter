@@ -1,12 +1,18 @@
 package com.fitmeter.fitmeter.model;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class FoodStats {
+@Entity(name="food_stats")
+public class FoodStats implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String user;
-    private String desc;
+    private String customer;
+    private String description;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date targetDate;
     private int carbs;
     private int calories;
@@ -15,11 +21,12 @@ public class FoodStats {
     private int sugar;
 
 
+    public FoodStats(){}
 
-    public FoodStats(int id, String user, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
+    public FoodStats(int id, String customer, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
         this.id = id;
-        this.user = user;
-        this.desc = desc;
+        this.customer = customer;
+        this.description = desc;
         this.targetDate = targetDate;
         this.carbs = carbs;
         this.calories = calories;
@@ -78,19 +85,19 @@ public class FoodStats {
     }
 
     public String getUser() {
-        return user;
+        return customer;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUser(String customer) {
+        this.customer = customer;
     }
 
     public String getDesc() {
-        return desc;
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDesc(String description) {
+        this.description = description;
     }
 
     public Date getTargetDate() {
@@ -107,8 +114,8 @@ public class FoodStats {
         if (o == null || getClass() != o.getClass()) return false;
         FoodStats foodStats = (FoodStats) o;
         return id == foodStats.id &&
-                Objects.equals(user, foodStats.user) &&
-                Objects.equals(desc, foodStats.desc) &&
+                Objects.equals(customer, foodStats.customer) &&
+                Objects.equals(description, foodStats.description) &&
                 Objects.equals(carbs,foodStats.carbs) &&
                 Objects.equals(calories,foodStats.calories) &&
                 Objects.equals(protein,foodStats.protein) &&
@@ -120,13 +127,13 @@ public class FoodStats {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, user, desc, targetDate, carbs, calories, protein, fat, sugar);
+        return Objects.hash(id, customer, description, targetDate, carbs, calories, protein, fat, sugar);
     }
 
     @Override
     public String toString() {
         return String.format(
                 "FoodStats [id=%s, user=%s, desc=%s, targetDate=%s, carbs=%s, protein=%s, calories=%s, fat=%s, sugar=%s]", id,
-                user, desc, targetDate, carbs, protein, calories, fat, sugar);
+                customer, description, targetDate, carbs, protein, calories, fat, sugar);
     }
 }

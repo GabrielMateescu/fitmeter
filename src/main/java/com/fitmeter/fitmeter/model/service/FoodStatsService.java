@@ -2,6 +2,7 @@ package com.fitmeter.fitmeter.model.service;
 
 import com.fitmeter.fitmeter.model.FoodStats;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,9 +10,11 @@ import java.util.Iterator;
 import java.util.List;
 
 @Service
+@Transactional
 public class FoodStatsService {
     public static List<FoodStats> foodStats = new ArrayList<>();
     private static int foodCount = 2;
+
 
     static {
         foodStats.add(new FoodStats(1, "Gabriel", "Papanasi", new Date(), 55, 344, 32, 12, 33));
