@@ -20,15 +20,21 @@ public class SampleTestController {
         return "Hello World";
     }
 
-    	@GetMapping("/all-tasks")
-	public String allTasks(){
+    	@GetMapping("/all-foods")
+	public String allFoods(){
 		return foodStatsService.findAll().toString();
 	}
 
-    	@GetMapping("/save-task")
-	public String saveTask(@RequestParam String customer, @RequestParam String description ){
-		FoodStats stats = new FoodStats(1, customer, description, new Date(), 23, 43, 34, 32, 32);
+    	@GetMapping("/save-foods")
+	public String saveFood(@RequestParam String customer, @RequestParam String description ){
+		FoodStats stats = new FoodStats( customer, description, new Date(), 23, 43, 34, 32, 32);
             foodStatsService.save(stats);
 		return "Food saved!";
+	}
+
+		@GetMapping("/delete-foodtest")
+	public String deleteFood(@RequestParam int id){
+		foodStatsService.delete(id);
+		return "Food deleted!";
 	}
 }

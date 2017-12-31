@@ -5,16 +5,13 @@ import com.fitmeter.fitmeter.model.dao.FoodStatsRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 @Service
 @Transactional
 public class FoodStatsService {
     public static List<FoodStats> foodStats = new ArrayList<>();
-    private static int foodCount = 2;
+//    private static int foodCount = 2;
 
     private FoodStatsRepository foodStatsRepository;
 
@@ -23,10 +20,10 @@ public class FoodStatsService {
     }
 
 
-    static {
-        foodStats.add(new FoodStats(1, "Gabriel", "Papanasi", new Date(), 55, 344, 32, 12, 33));
-        foodStats.add(new FoodStats(2, "Gabriel", "Banane", new Date(), 66, 553, 23, 44, 32));
-    }
+//    static {
+//        foodStats.add(new FoodStats(1, "Gabriel", "Papanasi", new Date(), 55, 344, 32, 12, 33));
+//        foodStats.add(new FoodStats(2, "Gabriel", "Banane", new Date(), 66, 553, 23, 44, 32));
+//    }
 
     public List<FoodStats> findAll() {
         List<FoodStats> foods = new ArrayList<>();
@@ -38,6 +35,14 @@ public class FoodStatsService {
 
     public void save(FoodStats foodStats){
         foodStatsRepository.save(foodStats);
+    }
+
+    public void delete(int id){
+        foodStatsRepository.deleteById(id);
+    }
+
+    public Optional<FoodStats> findFoodStats(int id){
+        return foodStatsRepository.findById(id);
     }
 
     public List<FoodStats> retrieveFoodStats(String user) {
@@ -62,7 +67,7 @@ public class FoodStatsService {
     }
 
     public void addFoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar){
-        foodStats.add(new FoodStats(++foodCount, name, desc, targetDate, carbs, calories, protein, fat, sugar));
+        foodStats.add(new FoodStats(name, desc, targetDate, carbs, calories, protein, fat, sugar));
     }
 
     public void deleteFoodStats(int id){

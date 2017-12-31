@@ -7,8 +7,10 @@ import java.util.Objects;
 
 @Entity(name="food_stats")
 public class FoodStats implements Serializable{
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
     private String customer;
     private String description;
@@ -23,9 +25,8 @@ public class FoodStats implements Serializable{
 
     public FoodStats(){}
 
-    public FoodStats(int id, String customer, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
+    public FoodStats(String customer, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
         super();
-        this.id = id;
         this.customer = customer;
         this.description = desc;
         this.targetDate = targetDate;
