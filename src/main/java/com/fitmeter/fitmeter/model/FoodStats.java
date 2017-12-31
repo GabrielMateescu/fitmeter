@@ -24,6 +24,7 @@ public class FoodStats implements Serializable{
     public FoodStats(){}
 
     public FoodStats(int id, String customer, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
+        super();
         this.id = id;
         this.customer = customer;
         this.description = desc;
