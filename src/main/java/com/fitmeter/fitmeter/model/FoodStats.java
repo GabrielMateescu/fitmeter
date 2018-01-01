@@ -12,7 +12,7 @@ public class FoodStats implements Serializable{
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
-    private String customer;
+    private String name;
     private String description;
     @Temporal(TemporalType.TIMESTAMP)
     private Date targetDate;
@@ -25,9 +25,9 @@ public class FoodStats implements Serializable{
 
     public FoodStats(){}
 
-    public FoodStats(String customer, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
+    public FoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
         super();
-        this.customer = customer;
+        this.name = name;
         this.description = desc;
         this.targetDate = targetDate;
         this.carbs = carbs;
@@ -86,12 +86,12 @@ public class FoodStats implements Serializable{
         this.id = id;
     }
 
-    public String getUser() {
-        return customer;
+    public String getName() {
+        return name;
     }
 
-    public void setUser(String customer) {
-        this.customer = customer;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDesc() {
@@ -116,7 +116,7 @@ public class FoodStats implements Serializable{
         if (o == null || getClass() != o.getClass()) return false;
         FoodStats foodStats = (FoodStats) o;
         return id == foodStats.id &&
-                Objects.equals(customer, foodStats.customer) &&
+                Objects.equals(name, foodStats.name) &&
                 Objects.equals(description, foodStats.description) &&
                 Objects.equals(carbs,foodStats.carbs) &&
                 Objects.equals(calories,foodStats.calories) &&
@@ -129,13 +129,13 @@ public class FoodStats implements Serializable{
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, customer, description, targetDate, carbs, calories, protein, fat, sugar);
+        return Objects.hash(id, name, description, targetDate, carbs, calories, protein, fat, sugar);
     }
 
     @Override
     public String toString() {
         return String.format(
-                "FoodStats [id=%s, user=%s, desc=%s, targetDate=%s, carbs=%s, protein=%s, calories=%s, fat=%s, sugar=%s]", id,
-                customer, description, targetDate, carbs, protein, calories, fat, sugar);
+                "FoodStats [id=%s, name=%s, desc=%s, targetDate=%s, carbs=%s, protein=%s, calories=%s, fat=%s, sugar=%s]", id,
+                name, description, targetDate, carbs, protein, calories, fat, sugar);
     }
 }

@@ -1,8 +1,16 @@
-package com.fitmeter.fitmeter.model.dao;
+package com.fitmeter.fitmeter.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity(name="users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long userId;
     private String username;
     private String password;
     private String email;
@@ -10,7 +18,6 @@ public class User {
     private String authority;
 
     public User(){
-
     }
 
     public User(String username, String password, String email, boolean enabled, String authority) {
@@ -19,6 +26,14 @@ public class User {
         this.email = email;
         this.enabled = enabled;
         this.authority = authority;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getEmail() {

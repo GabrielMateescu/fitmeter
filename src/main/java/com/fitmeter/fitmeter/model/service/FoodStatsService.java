@@ -48,7 +48,7 @@ public class FoodStatsService {
     public List<FoodStats> retrieveFoodStats(String user) {
         List<FoodStats> fileteredFoodStats = new ArrayList<>();
         for(FoodStats food : foodStats ) {
-            if(food.getUser().equals(user)){
+            if(food.getName().equals(user)){
                 fileteredFoodStats.add(food);
             }
         }
