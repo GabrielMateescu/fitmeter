@@ -41,13 +41,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             "/static/images/**",
             "/",
             "/error/**/*",
-            "/console/**",
             "/newaccount",
-//            "/login",
-            "/list-foods",
-            "/add-food",
-            "/delete-food"
-
+            "/calorie-calculator"
     };
 
     @Override

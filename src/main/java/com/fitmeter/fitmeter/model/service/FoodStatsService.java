@@ -11,19 +11,12 @@ import java.util.*;
 @Transactional
 public class FoodStatsService {
     public static List<FoodStats> foodStats = new ArrayList<>();
-//    private static int foodCount = 2;
 
     private FoodStatsRepository foodStatsRepository;
 
     public FoodStatsService(FoodStatsRepository foodStatsRepository){
         this.foodStatsRepository = foodStatsRepository;
     }
-
-
-//    static {
-//        foodStats.add(new FoodStats(1, "Gabriel", "Papanasi", new Date(), 55, 344, 32, 12, 33));
-//        foodStats.add(new FoodStats(2, "Gabriel", "Banane", new Date(), 66, 553, 23, 44, 32));
-//    }
 
     public List<FoodStats> findAll() {
         List<FoodStats> foods = new ArrayList<>();
