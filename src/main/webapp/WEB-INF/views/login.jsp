@@ -11,18 +11,20 @@
     <form class="form-signin" action="login" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <div class="form-group">
-        <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-        <input type="password" class="form-control" id="exampleInputPassword1" name = "pass" placeholder="Password">
-    </div>
-    <div class="form-check">
-        <label class="form-check-label">
-            <input type="checkbox" class="form-check-input">
-            Remember  me
-        </label>
-    </div>
+            <label for="username" class="sr-only">Username</label>
+            <input type="text" roleId="username" class="form-control" placeholder="Username" name="username"
+                   id="username"
+                   required="required" autofocus="autofocus"/>
+        </div>
+        <div class="form-group">
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" roleId="inputPassword" class="form-control" placeholder="Password"
+                   id="password"
+                   name="password" required="required"/>
+        </div>
+        <div class="form-group">
+            <input type="checkbox" name="remember-me" id="remember-me"/> &nbsp; Remember me
+        </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 
         <p>Don't have an account? <a href="<c:url value="/newaccount" />">Register</a> </p>

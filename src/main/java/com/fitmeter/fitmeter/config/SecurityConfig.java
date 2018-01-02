@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             "/error/**/*",
             "/console/**",
             "/newaccount",
-            "/login",
+//            "/login",
             "/list-foods",
             "/add-food",
             "/delete-food"
@@ -59,7 +59,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
         http
                 .csrf().disable().cors().disable()
-                .formLogin().failureUrl("/error").defaultSuccessUrl("/dashboard").loginPage("/").permitAll()
+                .formLogin().failureUrl("/error").defaultSuccessUrl("/dashboard").loginPage("/login").permitAll()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").deleteCookies("remember-me").permitAll()
                 .and()
@@ -70,4 +70,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder());
     }
+
 }

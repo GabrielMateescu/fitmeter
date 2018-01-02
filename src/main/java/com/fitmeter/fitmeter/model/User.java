@@ -23,7 +23,7 @@ public class User implements UserDetails {
 
     @Column(name = "email", nullable = false, unique = true)
     private String email;
-    private boolean enabled = false;
+    private boolean enabled = true;
     private String authority;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
