@@ -19,8 +19,8 @@ public class CalorieCalculatorService {
         return  filteredCalorieCalculatorStats;
     }
 
-    public void addStats(int age, boolean male, boolean female, int weight, int height, boolean noExcercise, boolean lightExercise, boolean moderateExercise, boolean intesiveExercise, boolean heavyExercise, double cal){
-        calorieCalculatorList.add(new CalorieCalculator(age, male, female, weight, height, noExcercise, lightExercise, moderateExercise, intesiveExercise, heavyExercise, cal));
+    public void addStats(int age, boolean male, boolean female, int weight, int height,  boolean lightExercise, boolean moderateExercise, boolean heavyExercise, double sum){
+        calorieCalculatorList.add(new CalorieCalculator(age, male, female, weight, height, lightExercise, moderateExercise, heavyExercise, sum));
     }
 
 }

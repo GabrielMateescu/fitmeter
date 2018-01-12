@@ -5,39 +5,34 @@
 <body>
 <div class = "container">
 
-    <h3>Your input</h3>
+    <h3>Your input - CalorieCalculator</h3>
     <table class="table table-bordered">
         <thead>
         <tr class="table-secondary">
-            <th class=>CalorieCalculator</th>
             <th>Age</th>
             <th>Male</th>
             <th>Female</th>
             <th>Weight</th>
             <th>Height</th>
-            <th>No exercise</th>
             <th>Light exercise</th>
             <th>Moderate exercise</th>
-            <th>Intensive exercise</th>
             <th>Heavy exercise</th>
             <th>Sum</th>
 
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${calorieinput}" var="calorieinput">
+        <c:forEach items="${calcInput}" var="calcInput">
             <tr>
-                <td>${calorieinput.age}</td>
-                <%--<td>${calorieinput.male}</td>--%>
-                <%--<td>${calorieinput.female}</td>--%>
-                <%--<td>${calorieinput.weight}</td>--%>
-                <%--<td>${calorieinput.height}</td>--%>
-                <%--<td>${calorieinput.noExercise}</td>--%>
-                <%--<td>${calorieinput.lightExercise}</td>--%>
-                <%--<td>${calorieinput.moderateExercise}</td>--%>
-                <%--<td>${calorieinput.intensiveExercise}</td>--%>
-                <%--<td>${calorieinput.heavyExercise}</td>--%>
-                <%--<td>${calorieinput.sum}</td>--%>
+                <td>${calcInput.age}</td>
+                <td>${calcInput.male}</td>
+                <td>${calcInput.female}</td>
+                <td>${calcInput.weight}</td>
+                <td>${calcInput.height}</td>
+                <td>${calcInput.lightExercise}</td>
+                <td>${calcInput.moderateExercise}</td>
+                <td>${calcInput.heavyExercise}</td>
+                <td>${calcInput.sum}</td>
             </tr>
         </c:forEach>
         </tbody>

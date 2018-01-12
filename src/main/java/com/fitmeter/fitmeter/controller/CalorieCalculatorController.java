@@ -23,7 +23,7 @@ public class CalorieCalculatorController {
 
     @RequestMapping(value = "/calorie-calculator", method = RequestMethod.POST )
     public String showCalculatedResultsPage(ModelMap model, @RequestParam int age){
-        calorieCalculatorService.addStats(age,false,true,100, 10900, true, false, false,false, false,  100);
+        calorieCalculatorService.addStats(age,false,true,100, 10900, false, false, false,  100);
 
         return "redirect:/list-calorie-results";
     }
@@ -31,7 +31,7 @@ public class CalorieCalculatorController {
 
     @RequestMapping(value = "/list-calorie-results", method = RequestMethod.GET)
     public String showCaloriesInput(ModelMap model){
-       model.put("calorieinput", calorieCalculatorService.retrieveCalorieCalculatorStats());
+       model.put("calcInput", calorieCalculatorService.retrieveCalorieCalculatorStats());
         return "list-calorie-results";
     }
 

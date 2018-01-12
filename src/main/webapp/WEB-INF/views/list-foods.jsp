@@ -2,7 +2,6 @@
 <%@include file="common/header.jspf"%>
 <%@include file="common/navigation.jspf"%>
 
-
 <html>
 <head>
     <title>Foods</title>
@@ -37,10 +36,7 @@
 </tr>
 </c:forEach>
 </tbody>
-
-
 </table>
-
 
 <div>
 <a class ="button" href="/add-food">Add food</a>

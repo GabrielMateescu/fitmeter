@@ -10,27 +10,23 @@ public class CalorieCalculator implements Serializable{
     private boolean female;
     private int weight;
     private int height;
-    private boolean noExcercise = false;
     private boolean lightExercise = false;
     private boolean moderateExercise = false;
-    private boolean intesiveExercise = false;
     private boolean heavyExercise = false;
-    private double cal;
+    private double sum = 0;
 
     public CalorieCalculator(){}
 
-    public CalorieCalculator(int age, boolean male, boolean female, int weight, int height, boolean noExcercise, boolean lightExercise, boolean moderateExercise, boolean intesiveExercise, boolean heavyExercise, double cal) {
+    public CalorieCalculator(int age, boolean male, boolean female, int weight, int height, boolean lightExercise, boolean moderateExercise, boolean heavyExercise, double sum) {
         this.age = age;
         this.male = male;
         this.female = female;
         this.weight = weight;
         this.height = height;
-        this.noExcercise = noExcercise;
         this.lightExercise = lightExercise;
         this.moderateExercise = moderateExercise;
-        this.intesiveExercise = intesiveExercise;
         this.heavyExercise = heavyExercise;
-        this.cal = cal;
+        this.sum = sum;
     }
 
     public int getAge() {
@@ -73,14 +69,6 @@ public class CalorieCalculator implements Serializable{
         this.height = height;
     }
 
-    public boolean isNoExcercise() {
-        return noExcercise;
-    }
-
-    public void setNoExcercise(boolean noExcercise) {
-        this.noExcercise = noExcercise;
-    }
-
     public boolean isLightExercise() {
         return lightExercise;
     }
@@ -97,14 +85,6 @@ public class CalorieCalculator implements Serializable{
         this.moderateExercise = moderateExercise;
     }
 
-    public boolean isIntesiveExercise() {
-        return intesiveExercise;
-    }
-
-    public void setIntesiveExercise(boolean intesiveExercise) {
-        this.intesiveExercise = intesiveExercise;
-    }
-
     public boolean isHeavyExercise() {
         return heavyExercise;
     }
@@ -113,12 +93,12 @@ public class CalorieCalculator implements Serializable{
         this.heavyExercise = heavyExercise;
     }
 
-    public double getCal() {
-        return cal;
+    public double getSum() {
+        return sum;
     }
 
-    public void setCal(double cal) {
-        this.cal = cal;
+    public void setSum(double sum) {
+        this.sum = sum;
     }
 
     @Override
@@ -131,18 +111,16 @@ public class CalorieCalculator implements Serializable{
                 female == that.female &&
                 weight == that.weight &&
                 height == that.height &&
-                noExcercise == that.noExcercise &&
                 lightExercise == that.lightExercise &&
                 moderateExercise == that.moderateExercise &&
-                intesiveExercise == that.intesiveExercise &&
                 heavyExercise == that.heavyExercise &&
-                Double.compare(that.cal, cal) == 0;
+                Double.compare(that.sum, sum) == 0;
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(age, male, female, weight, height, noExcercise, lightExercise, moderateExercise, intesiveExercise, heavyExercise, cal);
+        return Objects.hash(age, male, female, weight, height, lightExercise, moderateExercise, heavyExercise, sum);
     }
 
     @Override
@@ -153,12 +131,11 @@ public class CalorieCalculator implements Serializable{
                 ", female=" + female +
                 ", weight=" + weight +
                 ", height=" + height +
-                ", noExcercise=" + noExcercise +
                 ", lightExercise=" + lightExercise +
                 ", moderateExercise=" + moderateExercise +
-                ", intesiveExercise=" + intesiveExercise +
                 ", heavyExercise=" + heavyExercise +
-                ", cal=" + cal +
+                ", sum=" + sum +
                 '}';
     }
 }
+

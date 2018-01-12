@@ -40,11 +40,9 @@
 
                 <select class="custom-select">
                     <option selected>Select an Activity Level</option>
-                    <option value="2">Little to no exercise</option>
-                    <option value="3">Light exercise (1-3 days per week)</option>
-                    <option value="4">Moderate exercise (3−5 days per week)</option>
-                    <option value="5">Heavy exercise (6−7 days per week)</option>
-                    <option value="6">Very heavy exercise (twice per day, extra heavy workouts)</option>
+                    <option value="2">Light exercise (1-3 days per week)</option>
+                    <option value="3">Moderate exercise (3−5 days per week)</option>
+                    <option value="4">Heavy exercise (6−7 days per week)</option>
                 </select>
 
                 <div class="form-group">
