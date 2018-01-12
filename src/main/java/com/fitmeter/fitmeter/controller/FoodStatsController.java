@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 
 @Controller
-
 public class FoodStatsController {
 
     @Autowired
@@ -23,19 +22,18 @@ public class FoodStatsController {
 
     @RequestMapping(value = "/list-foods", method = RequestMethod.GET)
         public String showFoodList(ModelMap model){
-//        model.put("foods", service.retrieveFoodStats("Gabriel"));
         model.put("foods", service.findAll());
         return "list-foods";
     }
 
     @RequestMapping(value = "/add-food", method = RequestMethod.GET)
-    public String showAddFoodPage(ModelMap model){
+    public String showAddFoodPage(){
         return "add-food";
     }
 
 
     @RequestMapping(value = "/add-food", method = RequestMethod.POST)
-    public String addFood(@ModelAttribute FoodStats foodStats, BindingResult bindingResult, HttpServletRequest request){
+    public String addFood(@ModelAttribute FoodStats foodStats){
         foodStats.setTargetDate(new Date());
         service.save(foodStats);
         return "redirect:/list-foods";

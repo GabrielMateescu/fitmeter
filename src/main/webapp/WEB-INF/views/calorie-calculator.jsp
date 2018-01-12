@@ -3,6 +3,7 @@
 <%@include file="common/navigation.jspf"%>
 
 <div class="container h-100">
+    <form method="post">
     <div class="row h-100 justify-content-center align-items-center">
         <h2>Calorie Calculator</h2>
     </div>
@@ -54,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <div class="modal-footer">
-                            <button type="button" id="calculate" name="calculate" class="btn btn-primary" onclick="calcDailyCals();">Calculate</button>
+                            <button type="submit" class="btn btn-success">Calculate</button>
                         </div>
                     </div>
                 </div>
@@ -63,5 +64,6 @@
         </div>
 
     </div>
+    </form>
 </div>
 <%@include file="common/footer.jspf"%>

@@ -42,7 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
             "/",
             "/error/**/*",
             "/newaccount",
-            "/calorie-calculator"
+            "/calorie-calculator",
+            "/list-calorie-results"
     };
 
     @Override
