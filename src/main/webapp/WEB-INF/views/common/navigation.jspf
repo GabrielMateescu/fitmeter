@@ -12,20 +12,31 @@
                     <a class="nav-link" href="<c:url value="/" />">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<c:url value="/calorie-calculator"/>">Calorie Calculator</a>
+                <a class="nav-link" href="<c:url value="/calorie-calculator"/>">Calorie Calculator</a>
+                 </li>
+                <sec:authorize access="isAuthenticated()">
+                <li class="nav-item">
+                    <a class="nav-link" href="<c:url value="/list-foods"/>">Foods</a>
                 </li>
+                </sec:authorize>
             </ul>
         </div>
 
         <sec:authorize access="isAuthenticated()">
             <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
-                <li class="nav-item"><a class="nav-link" href="<c:url value="/logout"/>">Logout</a></li>
+                <li class="nav-item"><a class="nav-link" href="<c:url value="/logout"/>">Log Out</a></li>
             </div>
         </sec:authorize>
 
         <sec:authorize access="isAnonymous()">
             <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
-                <li class="nav-item"><a class="nav-link" href="<c:url value="/login"/>">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="<c:url value="/login"/>">Log In</a></li>
+            </div>
+        </sec:authorize>
+
+        <sec:authorize access="isAnonymous()">
+            <div class="navbar-nav mr-auto mt-2 mt-lg-0" >
+                <li class="nav-item"><a class="nav-link" href="<c:url value="/newaccount"/>">Register</a></li>
             </div>
         </sec:authorize>
 

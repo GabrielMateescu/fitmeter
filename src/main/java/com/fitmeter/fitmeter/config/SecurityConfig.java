@@ -54,7 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
         http
                 .csrf().disable().cors().disable()
-                .formLogin().failureUrl("/error").defaultSuccessUrl("/dashboard").loginPage("/login").permitAll()
+                .formLogin().failureUrl("/error").defaultSuccessUrl("/list-foods").loginPage("/login").permitAll()
                 .and()
                 .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout")).logoutSuccessUrl("/").deleteCookies("remember-me").permitAll()
                 .and()

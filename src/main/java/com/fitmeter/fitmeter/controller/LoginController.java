@@ -21,11 +21,4 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping("/dashboard")
-    public String userFront(Principal principal, Model model) {
-        User user = userService.findByUsername(principal.getName());
-
-        return "dashboard";
-    }
-
 }

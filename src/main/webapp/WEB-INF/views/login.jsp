@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="common/header.jspf"%>
 <%@include file="common/navigation.jspf"%>
-<%@include file="common/footer.jspf"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
@@ -30,3 +29,4 @@
         <p>Don't have an account? <a href="<c:url value="/newaccount" />">Register</a> </p>
 </form>
 </div>
+<%@include file="common/footer.jspf"%>
