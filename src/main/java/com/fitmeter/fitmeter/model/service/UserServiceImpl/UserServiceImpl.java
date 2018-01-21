@@ -2,7 +2,7 @@ package com.fitmeter.fitmeter.model.service.UserServiceImpl;
 
 import com.fitmeter.fitmeter.model.User;
 import com.fitmeter.fitmeter.model.dao.RoleDao;
-import com.fitmeter.fitmeter.model.dao.UserDaoRepository;
+import com.fitmeter.fitmeter.model.dao.UserDao;
 import com.fitmeter.fitmeter.model.security.UserRole;
 import com.fitmeter.fitmeter.model.service.UserService;
 import org.slf4j.Logger;
@@ -12,7 +12,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
 import java.util.Set;
 
 @Service
@@ -22,7 +21,7 @@ public class UserServiceImpl implements UserService{
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
-    private UserDaoRepository userDaoRepository;
+    private UserDao userDao;
 
     @Autowired
     private RoleDao roleDao;
@@ -31,16 +30,16 @@ public class UserServiceImpl implements UserService{
     private BCryptPasswordEncoder passwordEncoder;
 
     public void save(User user){
-        userDaoRepository.save(user);
+        userDao.save(user);
     }
 
     public User saveUser (User user) {
-        return userDaoRepository.save(user);
+        return userDao.save(user);
     }
 
     @Override
     public User createUser(User user, Set<UserRole> userRoles) {
-        User localUser = userDaoRepository.findByUsername((user.getUsername()));
+        User localUser = userDao.findByUsername((user.getUsername()));
 
         if (localUser != null) {
             LOG.info("User with username {} already exist.", user.getUsername());
@@ -54,18 +53,18 @@ public class UserServiceImpl implements UserService{
 
             user.getUserRoles().addAll(userRoles);
 
-            localUser = userDaoRepository.save(user);
+            localUser = userDao.save(user);
         }
 
         return localUser;
     }
 
     public User findByUsername(String username){
-        return userDaoRepository.findByUsername(username);
+        return userDao.findByUsername(username);
     }
 
     public User findByEmail(String email){
-        return userDaoRepository.findByEmail(email);
+        return userDao.findByEmail(email);
     }
 
     public boolean checkUserExists(String username, String email){

@@ -1,6 +1,5 @@
 package com.fitmeter.fitmeter.controller;
 
-import com.fitmeter.fitmeter.model.CalorieCalculator;
 import com.fitmeter.fitmeter.model.service.CalorieCalculatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,7 +21,7 @@ public class CalorieCalculatorController {
     }
 
     @RequestMapping(value = "/calorie-calculator", method = RequestMethod.POST )
-    public String showCalculatedResultsPage(ModelMap model, @RequestParam int age){
+    public String showCalculatedResultsPage(@RequestParam int age){
         calorieCalculatorService.addStats(age,false,true,100, 10900, false, false, false,  100);
 
         return "redirect:/list-calorie-results";

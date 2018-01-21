@@ -17,7 +17,8 @@ public class LoginController {
     UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginPage(Model model){
+    public String showLoginPage(){
+
         return "login";
     }
 
