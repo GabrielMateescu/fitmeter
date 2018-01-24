@@ -34,7 +34,7 @@
                 <div class="form-group">
 
                     <div class="input-group" data-validate="number">
-                        <input type="text" class="form-control" name="inches" id="inches" placeholder="Height(cm)" required>
+                        <input type="text" class="form-control" name="height" id="height" placeholder="Height(cm)" required>
                     </div>
                 </div>
 

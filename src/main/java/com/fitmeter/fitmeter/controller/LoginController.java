@@ -9,17 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
+
 @Controller
 
 public class LoginController {
 
-    @Autowired
-    UserService userService;
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginPage(){
-
-        return "login";
+    @RequestMapping(value="/login", method = GET)
+    public String login(Principal principal) {
+        return principal == null ?  "login" : "redirect:/";
     }
 
 }

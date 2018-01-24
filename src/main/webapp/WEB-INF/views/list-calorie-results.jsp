@@ -17,24 +17,24 @@
             <th>Light exercise</th>
             <th>Moderate exercise</th>
             <th>Heavy exercise</th>
-            <th>Sum</th>
+            <th>Calories Burned</th>
 
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${calcInput}" var="calcInput">
+        <%--<c:forEach items="${calcInput}" var="calcInput">--%>
             <tr>
-                <td>${calcInput.age}</td>
+                <td>${age}</td>
                 <td>${calcInput.male}</td>
                 <td>${calcInput.female}</td>
-                <td>${calcInput.weight}</td>
-                <td>${calcInput.height}</td>
+                <td>${weight}</td>
+                <td>${height}</td>
                 <td>${calcInput.lightExercise}</td>
                 <td>${calcInput.moderateExercise}</td>
                 <td>${calcInput.heavyExercise}</td>
-                <td>${calcInput.sum}</td>
+                <td>${sum}</td>
             </tr>
-        </c:forEach>
+        <%--</c:forEach>--%>
         </tbody>
 
 
