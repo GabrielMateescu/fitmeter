@@ -1,7 +1,9 @@
 package com.fitmeter.fitmeter.model.service;
 
 import com.fitmeter.fitmeter.model.FoodStats;
+import com.fitmeter.fitmeter.model.User;
 import com.fitmeter.fitmeter.model.dao.FoodStatsRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +12,10 @@ import java.util.*;
 @Service
 @Transactional
 public class FoodStatsService {
+
+    @Autowired
+    private UserService userService;
+
     public static List<FoodStats> foodStats = new ArrayList<>();
 
     private FoodStatsRepository foodStatsRepository;
@@ -17,6 +23,15 @@ public class FoodStatsService {
     public FoodStatsService(FoodStatsRepository foodStatsRepository){
         this.foodStatsRepository = foodStatsRepository;
     }
+
+
+    public List<FoodStats> findUserFoodStatsList(String username){
+        User user = userService.findByUsername(username);
+        List<FoodStats> findUserFoodStatsList = user.getFoodStats();
+
+        return findUserFoodStatsList;
+    }
+
 
     public List<FoodStats> findAll() {
         List<FoodStats> foods = new ArrayList<>();
@@ -59,8 +74,8 @@ public class FoodStatsService {
         return null;
     }
 
-    public void addFoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar){
-        foodStats.add(new FoodStats(name, desc, targetDate, carbs, calories, protein, fat, sugar));
+    public void addFoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar, User user){
+        foodStats.add(new FoodStats(name, desc, targetDate, carbs, calories, protein, fat, sugar, user));
     }
 
     public void deleteFoodStats(int id){

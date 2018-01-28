@@ -22,10 +22,13 @@ public class FoodStats implements Serializable{
     private int fat;
     private int sugar;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public FoodStats(){}
 
-    public FoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar) {
+    public FoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar, User user) {
         super();
         this.name = name;
         this.description = desc;
@@ -35,7 +38,16 @@ public class FoodStats implements Serializable{
         this.protein = protein;
         this.fat = fat;
         this.sugar = sugar;
+        this.user = user;
 
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getFat() {

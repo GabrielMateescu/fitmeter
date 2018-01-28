@@ -19,10 +19,10 @@
                 <div class="form-group">
                     <div class="form-check mb-2 mr-sm-2 mb-sm-0">
                         <label class="form-check-label">
-                            <input class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="option1" type="radio">Male
+                            <input class="form-check-input" name="male" id="male" value="male" type="radio">Male
                         </label>
                         <label class="form-check-label">
-                            <input class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="option2" type="radio"> Female
+                            <input class="form-check-input" name="female" id="female" value="female" type="radio"> Female
                         </label>
                     </div>
                 </div>
@@ -40,9 +40,9 @@
 
                 <select class="custom-select">
                     <option selected>Select an Activity Level</option>
-                    <option value="2">Light exercise (1-3 days per week)</option>
-                    <option value="3">Moderate exercise (3−5 days per week)</option>
-                    <option value="4">Heavy exercise (6−7 days per week)</option>
+                    <option value="2">Light exercise (1 - 3 days per week)</option>
+                    <option value="3">Moderate exercise (3 - 5 days per week)</option>
+                    <option value="4">Heavy exercise (6 - 7 days per week)</option>
                 </select>
 
                 <div class="form-group">

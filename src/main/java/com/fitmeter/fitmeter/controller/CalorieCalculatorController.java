@@ -21,12 +21,13 @@ public class CalorieCalculatorController {
     }
 
     @RequestMapping(value = "/calorie-calculator", method = RequestMethod.POST)
-    public String showResultsPage(ModelMap model, @RequestParam int age, @RequestParam float weight, @RequestParam float height){
+    public String showResultsPage(ModelMap model, @RequestParam int age, @RequestParam float weight, @RequestParam float height, @RequestParam (required = false) String male)
+    {
 
         model.put("age", age);
         model.put("weight", weight);
         model.put("height", height);
-        model.put("sum", calorieCalculatorService.sum(age, weight, height));
+        model.put("sum", calorieCalculatorService.sum(age, weight, height, male));
 
         return "list-calorie-results";
     }
