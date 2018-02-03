@@ -21,7 +21,8 @@ public class CalorieCalculatorController {
     }
 
     @RequestMapping(value = "/calorie-calculator", method = RequestMethod.POST)
-    public String showResultsPage(ModelMap model, @RequestParam int age, @RequestParam float weight, @RequestParam float height, @RequestParam (required = false) String male)
+    public String showResultsPage(ModelMap model, @RequestParam int age, @RequestParam float weight,
+                                  @RequestParam float height, @RequestParam (required = false) String male)
     {
 
         model.put("age", age);

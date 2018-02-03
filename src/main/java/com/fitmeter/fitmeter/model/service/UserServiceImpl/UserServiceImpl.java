@@ -16,7 +16,7 @@ import java.util.Set;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
@@ -29,11 +29,11 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    public void save(User user){
+    public void save(User user) {
         userDao.save(user);
     }
 
-    public User saveUser (User user) {
+    public User saveUser(User user) {
         return userDao.save(user);
     }
 
@@ -59,31 +59,31 @@ public class UserServiceImpl implements UserService{
         return localUser;
     }
 
-    public User findByUsername(String username){
+    public User findByUsername(String username) {
         return userDao.findByUsername(username);
     }
 
-    public User findByEmail(String email){
+    public User findByEmail(String email) {
         return userDao.findByEmail(email);
     }
 
-    public boolean checkUserExists(String username, String email){
-        if(checkUsernameExists(username) || checkEmailExists(email)){
+    public boolean checkUserExists(String username, String email) {
+        if (checkUsernameExists(username) || checkEmailExists(email)) {
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean checkUsernameExists(String username){
-        if(findByUsername(username) != null){
+    public boolean checkUsernameExists(String username) {
+        if (findByUsername(username) != null) {
             return true;
         }
         return false;
     }
 
-    public boolean checkEmailExists(String email){
-        if(findByEmail(email) != null){
+    public boolean checkEmailExists(String email) {
+        if (findByEmail(email) != null) {
             return true;
         }
         return false;
