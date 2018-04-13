@@ -17,21 +17,21 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="static/images/la.jpg" alt="Timisoara" width="1100" height="500">
+                <img src="static/images/workout2.jpg" alt="Timisoara" width="1100" height="500">
                 <div class="carousel-caption">
                     <h3>Timisoara</h3>
                     <p>We love the Big Apple!</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="static/images/chicago.jpg" alt="Chicago" width="1100" height="500">
+                <img src="static/images/workout1.jpg" alt="Chicago" width="1100" height="500">
                 <div class="carousel-caption">
                     <h3>Chicago</h3>
                     <p>We love the Big Apple!</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="static/images/ny.jpg" alt="New York" width="1100" height="500">
+                <img src="static/images/workout3.jpg" alt="New York" width="1100" height="500">
                 <div class="carousel-caption">
                     <h3>New York</h3>
                     <p>We love the Big Apple!</p>
@@ -51,16 +51,16 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div id="Fitmenter" class="container tab-pane active"><br>
-            <h3>HOME</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h4>Look no further. You have the best calorie counter app right here.</h4>
+            <p>Tracking your food and calorie intake from time to time is important.</p>
         </div>
         <div id="Calorie Calculator" class="container tab-pane fade"><br>
             <h3>Menu 1</h3>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Largest database available in a diet tracker, and it includes many restaurant foods.</p>
         </div>
         <div id="Log In" class="container tab-pane fade"><br>
             <h3>Menu 2</h3>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+            <p>Sdownload recipes from the internet and calculate the calorie content of each serving.</p>
         </div>
     </div>
 </div>
@@ -68,22 +68,22 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
-            <h4>Column 1</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <h4>Track</h4>
+            <p>You can quick add calories if you don't have the time to add details about a certain meal.</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
         <div class="col-sm-4">
-            <h4>Column 2</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <h4>Learn</h4>
+            <p>Largest database available in a diet tracker, and it includes many restaurant foods.</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
         <div class="col-sm-4">
-            <h4>Column 3</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+            <h4>Use existing data</h4>
+            <p>Download recipes from the internet and calculate the calorie content of each serving.</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
