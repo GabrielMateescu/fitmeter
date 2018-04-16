@@ -38,9 +38,39 @@
 </tbody>
 </table>
 
-<div>
-<a class ="button" href="/add-food">Add food</a>
-</div>
+    <div>
+        <a class="button" href="/add-food">Add food</a>
+    </div>
+
+    <br>
+    <br>
+
+    <h1>Totals</h1>
+    <table class="table table-bordered">
+        <thead>
+        <tr class="table-secondary">
+            <th class=>Calories (kcal)</th>
+            <th>Carbs (g)</th>
+            <th>Protein (g)</th>
+            <th>Fat (g)</th>
+            <th>Sugar (g)</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${foods}" var="food">
+            <tr>
+                <td>${food.totalCalories}</td>
+                <td>${food.totalCarbs}</td>
+                <td>${food.totalProtein}</td>
+                <td>${food.totalFat}</td>
+                <td>${food.totalSugar}</td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+
+
 </div>
 </body>
 <%@include file="common/footer.jspf"%>

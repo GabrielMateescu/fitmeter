@@ -51,4 +51,49 @@ public class FoodStatsService {
             }
         }
     }
+
+    public int sumSugar(String username) {
+        User user = userService.findByUsername(username);
+        List<FoodStats> findUserFoodStatsList = user.getFoodStats();
+        return findUserFoodStatsList
+                .stream()
+                .mapToInt(FoodStats::getSugar)
+                .sum();
+    }
+
+    public int sumCalories(String username) {
+        User user = userService.findByUsername(username);
+        List<FoodStats> findUserFoodStatsList = user.getFoodStats();
+        return findUserFoodStatsList
+                .stream()
+                .mapToInt(FoodStats::getCalories)
+                .sum();
+    }
+
+    public int sumFat(String username) {
+        User user = userService.findByUsername(username);
+        List<FoodStats> findUserFoodStatsList = user.getFoodStats();
+        return findUserFoodStatsList
+                .stream()
+                .mapToInt(FoodStats::getFat)
+                .sum();
+    }
+
+    public int sumProtein(String username) {
+        User user = userService.findByUsername(username);
+        List<FoodStats> findUserFoodStatsList = user.getFoodStats();
+        return findUserFoodStatsList
+                .stream()
+                .mapToInt(FoodStats::getProtein)
+                .sum();
+    }
+
+    public int sumCarbs(String username) {
+        User user = userService.findByUsername(username);
+        List<FoodStats> findUserFoodStatsList = user.getFoodStats();
+        return findUserFoodStatsList
+                .stream()
+                .mapToInt(FoodStats::getCarbs)
+                .sum();
+    }
 }

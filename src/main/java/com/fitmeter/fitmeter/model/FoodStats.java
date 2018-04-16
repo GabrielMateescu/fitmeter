@@ -22,13 +22,19 @@ public class FoodStats implements Serializable{
     private int fat;
     private int sugar;
 
+    private Integer totalSugar;
+    private Integer totalCarbs;
+    private Integer totalProtein;
+    private Integer totalFat;
+    private Integer totalCalories;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
 
     public FoodStats(){}
 
-    public FoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar, User user) {
+    public FoodStats(String name, String desc, Date targetDate, int carbs, int calories, int protein, int fat, int sugar, User user, Integer totalSugar) {
         super();
         this.name = name;
         this.description = desc;
@@ -39,7 +45,48 @@ public class FoodStats implements Serializable{
         this.fat = fat;
         this.sugar = sugar;
         this.user = user;
+        this.totalSugar = totalSugar;
 
+    }
+
+    public Integer getTotalSugar() {
+        return totalSugar;
+    }
+
+    public void setTotalSugar(Integer totalSugar) {
+        this.totalSugar = totalSugar;
+    }
+
+    public Integer getTotalCarbs() {
+        return totalCarbs;
+    }
+
+    public void setTotalCarbs(Integer totalCarbs) {
+        this.totalCarbs = totalCarbs;
+    }
+
+    public Integer getTotalProtein() {
+        return totalProtein;
+    }
+
+    public void setTotalProtein(Integer totalProtein) {
+        this.totalProtein = totalProtein;
+    }
+
+    public Integer getTotalFat() {
+        return totalFat;
+    }
+
+    public void setTotalFat(Integer totalFat) {
+        this.totalFat = totalFat;
+    }
+
+    public Integer getTotalCalories() {
+        return totalCalories;
+    }
+
+    public void setTotalCalories(Integer totalCalories) {
+        this.totalCalories = totalCalories;
     }
 
     public User getUser() {

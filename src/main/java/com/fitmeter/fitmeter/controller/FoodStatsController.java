@@ -48,6 +48,12 @@ public class FoodStatsController {
     public String addFood(@ModelAttribute FoodStats foodStats, Principal principal) {
         foodStats.setTargetDate(new Date());
 
+        foodStats.setTotalSugar(foodStatsService.sumSugar(principal.getName()));
+        foodStats.setTotalCalories(foodStatsService.sumCalories(principal.getName()));
+        foodStats.setTotalFat(foodStatsService.sumFat(principal.getName()));
+        foodStats.setTotalProtein(foodStatsService.sumProtein(principal.getName()));
+        foodStats.setTotalCarbs(foodStatsService.sumCarbs(principal.getName()));
+
         //delete functionality will fail when I add this
         User user = userService.findByUsername(principal.getName());
         foodStats.setUser(user);
