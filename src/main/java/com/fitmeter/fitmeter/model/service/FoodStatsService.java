@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 @Service
@@ -40,16 +39,6 @@ public class FoodStatsService {
 
     public void delete(int id) {
         foodStatsRepository.deleteById(id);
-    }
-
-    public void deleteFoodStats(int id) {
-        Iterator<FoodStats> iterator = foodStats.iterator();
-        while (iterator.hasNext()) {
-            FoodStats foodStats = iterator.next();
-            if (foodStats.getId() == id) {
-                iterator.remove();
-            }
-        }
     }
 
     public int sumSugar(String username) {

@@ -58,15 +58,14 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${foods}" var="food">
             <tr>
-                <td>${food.totalCalories}</td>
-                <td>${food.totalCarbs}</td>
-                <td>${food.totalProtein}</td>
-                <td>${food.totalFat}</td>
-                <td>${food.totalSugar}</td>
+                <td>${caloriesCount}</td>
+                <td>${carbsCount}</td>
+                <td>${proteinCount}</td>
+                <td>${fatCount}</td>
+                <td>${sugarCount}</td>
             </tr>
-        </c:forEach>
+
         </tbody>
     </table>
 

@@ -32,9 +32,32 @@ public class FoodStatsController {
     @RequestMapping(value = "/list-foods", method = RequestMethod.GET)
     public String showFoodList(ModelMap model, Principal principal) {
 
+        int caloriesCount = 0;
+        int carbsCount = 0;
+        int proteinCount = 0;
+        int fatCount = 0;
+        int sugarCount = 0;
+
         List<FoodStats> userFoodStatsList = foodStatsService.findUserFoodStatsList(principal.getName());
 
         model.put("foods", userFoodStatsList);
+
+
+        for (FoodStats foodStat : userFoodStatsList) {
+            caloriesCount += foodStat.getCalories();
+            carbsCount += foodStat.getCarbs();
+            proteinCount += foodStat.getProtein();
+            fatCount += foodStat.getFat();
+            sugarCount += foodStat.getSugar();
+        }
+
+        model.put("caloriesCount", caloriesCount);
+        model.put("carbsCount", carbsCount);
+        model.put("proteinCount", proteinCount);
+        model.put("fatCount", fatCount);
+        model.put("sugarCount", sugarCount);
+
+
         return "list-foods";
     }
 
@@ -54,7 +77,6 @@ public class FoodStatsController {
         foodStats.setTotalProtein(foodStatsService.sumProtein(principal.getName()));
         foodStats.setTotalCarbs(foodStatsService.sumCarbs(principal.getName()));
 
-        //delete functionality will fail when I add this
         User user = userService.findByUsername(principal.getName());
         foodStats.setUser(user);
 
@@ -66,12 +88,7 @@ public class FoodStatsController {
     public String deleteFood(@RequestParam int id) {
 
         LOG.info("Deleting food with id: {}", id);
-
-        foodStatsService.deleteFoodStats(id);
-
-//        List<FoodStats> userFoodStatsList = foodStatsService.findUserFoodStatsList(principal.getName());
-//
-//        model.put("foods", userFoodStatsList);
+        foodStatsService.delete(id);
 
         return "redirect:/list-foods";
     }
